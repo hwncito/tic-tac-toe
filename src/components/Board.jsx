@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Square from './Square';
 import ResetButton from './ResetButton';
+import Confetti from './Confetti';
 
 export default function Board() {
   const [nextPlayer, setNextPlayer] = useState('X');
@@ -127,6 +128,7 @@ export default function Board() {
         <div className="mt-10 text-center text-xl flex flex-col items-center gap-5">
           <span>Winner is {winner}</span>
           <ResetButton handleReset={handleReset} />
+          <Confetti />
         </div>
       )}
       {winner && winner == 'Draw' && (
